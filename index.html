@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+  <head>
+    <!-- PAGE INFO -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experimento Intercâmbio</title>
+
+    <!-- Icones -->
+    <link rel="stylesheet" href="assets/fonts/style.css" />
+
+    <!-- Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header id="header">
+      <nav class="container">
+        <a class="logo" href="#">experimento<span>boaviagem/pe</span>.</a>
+        <!-- menu -->
+        <div class="menu">
+          <ul class="grid">
+            <li><a class="title" href="#home">Início</a></li>
+            <li><a class="title" href="#about">Sobre</a></li>
+            <li><a class="title" href="#services">Serviços</a></li>
+            <li><a class="title" href="#testimonials">Depoimentos</a></li>
+            <li><a class="title" href="#contact">Contato</a></li>
+            
+            <!-- Botão do Carrinho com Imagem -->
+            <div class="cart-button" id="cart-button">
+              <button class="toggle" id="open-cart-modal">
+                <img src="https://cdn.pixabay.com/photo/2016/10/10/14/46/icon-1728552_640.jpg" alt="Carrinho de Compras">
+                <span id="cart-quantity"> (0)</span>
+              </button>
+            </div>
+
+            <!-- Modal do Carrinho -->
+            <div id="cart-modal" class="modal">
+              <div class="modal-content">
+                <span class="close" onclick="closeCartModal()">&times;</span>
+                <h2 class="title">Resumo do Carrinho</h2>
+                <style>
+                  .imagem-redimensionada {
+                      width: 200px; /* Largura desejada */
+                      height: auto; /* Altura automática para manter a proporção original */
+                  }
+              </style>
+                <div id="cart-summary" class="cart-summary">
+                  <!-- Itens do carrinho e formulário serão adicionados aqui -->
+                </div>
+                <h2 class="title">Preencha seus dados</h2>
+                <form id="user-info-form">
+                  <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">Telefone:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                  </div>
+                  <button type="button" onclick="sendOrder()" class="selecionar-button">Enviar Solicitação</button>
+                </form>
+              </div>
+            </div>
+          </ul>
+        </div>
+        <!-- /menu -->
+        <div class="toggle icon-menu"></div>
+        <div class="toggle icon-close"></div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HOME -->
+      <section class="section" id="home">
+        <div class="container grid">
+          <div class="image">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdpJ68SA92eGFpX5XGCVhsVuePcZ7LjJpYJQ&usqp=CAU"
+              alt="Mulher sorrindo penteando outra mulher"
+            />
+          </div>
+          <div class="text">
+            <h2 class="title">EXPERIMENTO INTERCÂMBIO CULTURAL</h2>
+            <p>
+              Venha nos fazer uma visita em uma das mais de 60 lojas espalhadas pelo Brasil.
+            </p>
+            <a
+              href="https://api.whatsapp.com/send?phone=+5581987989640&text=Oi! Gostaria de agendar um horário"
+              class="button agendar-horario-button"
+              target="_blank"
+              ><i class="icon-whatsapp"></i>Agendar um horário</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-1"></div>
+
+      <!-- ABOUT -->
+      <section class="section" id="about">
+        <div class="container grid">
+          <div class="image">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKbHRHCRbZyneY-yAW0hqfEH-spSxneYOB6g&usqp=CAU"
+              alt="Experimento 50 anos"
+            />
+          </div>
+          <div class="text">
+            <h2 class="title">Sobre nós</h2>
+            <p>
+              A Experimento é pioneira no segmento de intercâmbio cultural, 
+              com mais de 58 anos de atuação no Brasil, é a maior rede especializada 
+              exclusivamente em intercâmbio cultural do país.
+            </p>
+            <br />
+            <p>
+              Foi fundada no Brasil em 1964, como membro brasileiro da Federação Internacional
+              The Federation of the Experiment in Internacional Living (EIL), a primeira organização 
+              mundial a promover programas de educação experimental através do aprendizado internacional.
+            </p>
+            <br />
+            <p>
+              A Federation EIL também foi pioneira através de seus membros internacionais, a dar
+              oportunidade a estudantes internacionais de viverem com uma família estrangeira através 
+              de seus programas de “homestay” propiciando aos jovens uma exposição a uma diferente cultura e idioma.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-2"></div>
+
+      <!-- SERVICES -->
+      <section class="section" id="services">
+        <div class="container grid">
+          <header>
+            <h2 class="title">Serviços</h2>
+            <p class="subtitle">
+              Com mais de 50 anos no mercado, o <strong>experimentoboaviagem</strong> já
+              conquistou clientes com diversos programas de intercâmbios culturais
+            </p>
+          </header>
+          <div class="cards grid">
+            <div class="card" data-modal="modal1">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJC7cv4Df8EB31ArkWdZzY4FJSfFmDuUx9NA&usqp=CAU" alt="foto 01">
+              <h3 class="title">Travel Plus</h3>
+              <p>Viva experiências inesquecíveis aprendendo um idioma</p>
+            </div>
+            <div class="card" data-modal="modal2">
+              <img src="https://image.isu.pub/200703131553-485ffc5671f5188479cc2b9ab5021524/jpg/page_1.jpg" alt="foto 02">
+              <h3 class="title">AU Pair</h3>
+              <p>Estude e more nos Estados Unidos cuidando de crianças</p>
+            </div>
+            <div class="card" data-modal="modal3">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl-73m-Qy8AnT0EGe_7LQTbyF3Le4DvP136w&usqp=CAU" alt="foto 03">
+              <h3 class="title">High School</h3>
+              <p>Faça o Ensino Médio no Exterior</p>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Modal para o Card 1 -->
+        <div id="modal1" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h2 class="title">Travel Plus</h2>
+            <style>
+              .imagem-redimensionada {
+                  width: 200px; /* Largura desejada */
+                  height: auto; /* Altura automática para manter a proporção original */
+              }
+          </style>
+          
+          <img src="https://img.freepik.com/fotos-gratis/linda-garota-de-pe-no-barco-e-olhando-para-as-montanhas-na-barragem-de-ratchaprapha-no-parque-nacional-khao-sok-provincia-de-surat-thani-tailandia_335224-849.jpg?w=740&t=st=1693101914~exp=1693102514~hmac=41e8ec6bacb081a37fc88b2012a772ade8f6ddb97b78798d7dfc8c517be54baf" alt="Garota em um barco olhando para as montanhas" class="imagem-redimensionada">
+            
+          <p>Viva experiências inesquecíveis aprendendo um idioma</p>
+            <!-- Adicione o texto aqui -->
+            <p>
+
+        Descubra o fascinante mundo do turismo de idiomas, onde aprender uma nova língua se funde com experiências culturais autênticas. Escolha destinos inspiradores, participe de aulas especializadas e mergulhe na cultura local. Ao concluir o programa, receba certificados reconhecidos internacionalmente. O turismo de idiomas não é apenas aprender, mas também uma jornada transformadora que expande horizontes e cria memórias inesquecíveis. Embarque nessa aventura conosco e descubra um novo mundo de oportunidades!</p>
+
+            <!-- Adicione o botão "Selecionar" aqui -->
+            <input type="number" id="quantity-modal1" value="1" min="1" max="10">
+            <button class="selecionar-button" onclick="addToCart('Travel Plus', 'modal1')">Adicionar ao Carrinho</button>
+          </div>
+        </div>
+
+        <!-- Modal para o Card 2 -->
+        <div id="modal2" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h2 class="title">AU Pair</h2>
+            <style>
+              .imagem-redimensionada {
+                  width: 200px; /* Largura desejada */
+                  height: auto; /* Altura automática para manter a proporção original */
+              }
+          </style>
+          
+          <img src="https://img.freepik.com/fotos-gratis/tiro-completo-mae-e-filho-andando-na-natureza_23-2149913383.jpg?w=740&t=st=1693103038~exp=1693103638~hmac=7d6f2e2aababaf2a29cdf3a7d28f8ae666c988cdebda5406394d508c025f3f9d" alt="Mulher e Criança no Gramado" class="imagem-redimensionada">
+            
+          <p>Estude e more nos Estados Unidos cuidando de crianças</p>
+            <!-- Adicione o texto aqui -->
+            <p>
+
+              Descubra o incrível programa Au Pair, uma oportunidade única de intercâmbio que combina o cuidado amoroso de crianças com a imersão cultural em um país estrangeiro. Como Au Pair, você fará parte de uma família anfitriã, experimentando a vida cotidiana e explorando uma cultura diferente. Essa jornada oferece crescimento pessoal e profissional, aventuras emocionantes e apoio contínuo. Junte-se a nós como uma Au Pair e desvende um mundo de possibilidades.</p>
+
+            <!-- Adicione o botão "Selecionar" aqui -->
+            <input type="number" id="quantity-modal2" value="1" min="1" max="10">
+            <button class="selecionar-button" onclick="addToCart('AU Pair', 'modal2')">Adicionar ao Carrinho</button>
+          </div>
+        </div>
+
+
+        <!-- Modal para o Card 3 -->
+        <div id="modal3" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h2 class="title">High School</h2>
+            <style>
+              .imagem-redimensionada {
+                  width: 200px; /* Largura desejada */
+                  height: auto; /* Altura automática para manter a proporção original */
+              }
+          </style>
+          
+          <img src="https://img.freepik.com/fotos-gratis/estudantes-universitarios-lotando-ao-ar-livre_23-2149649347.jpg?w=740&t=st=1693103511~exp=1693104111~hmac=e51df243ea81b7d0f09726299a302bc72eb8a87c3cdff863ac7072226e185762" alt="Estudantes na Escola" class="imagem-redimensionada">
+            
+          <p>Faça o Ensino Médio no Exterior</p>
+            <!-- Adicione o texto aqui -->
+            <p>
+
+              Explore um programa de intercâmbio de High School que oferece uma experiência única de aprendizado e crescimento em um ambiente internacional. Estude em uma escola estrangeira, viva com uma família anfitriã, e mergulhe profundamente em uma nova cultura. Ganhe habilidades acadêmicas, desenvolva sua independência e construa amizades globais duradouras. Uma jornada inesquecível de descoberta está à sua espera. Junte-se a nós e comece sua aventura de intercâmbio de High School hoje mesmo.</p>
+
+            <!-- Adicione o botão "Selecionar" aqui -->
+            <input type="number" id="quantity-modal3" value="1" min="1" max="10">
+            <button class="selecionar-button" onclick="addToCart('High School', 'modal3')">Adicionar ao Carrinho</button>
+          </div>
+        </div>
+      </section>
+        
+      <div class="divider-1"></div>
+
+      <!-- TESTIMONIALS -->
+      <section class="section" id="testimonials">
+        <div class="container">
+          <header>
+            <h2 class="title">Depoimentos de quem já passou por aqui</h2>
+          </header>
+          <div class="testimonials swiper-container">
+            <div class="swiper-wrapper">
+              <div class="testimonial swiper-slide">
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>
+                    Muito satisfeita com o acompanhamento!!!!!
+                  </p>
+                  <cite>
+                    <img
+                      src="assets/fotos/10.jpeg"
+                      alt="Foto de Wanessa Souza"
+                    />
+                    Wanessa Souza
+                  </cite>
+                </blockquote>
+              </div>
+
+              <div class="testimonial swiper-slide">
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>
+                    Excelente!!!!!
+                  </p>
+                  <cite>
+                    <img
+                      src="assets/fotos/56.jpeg"
+                      alt="Foto de Franciele Venega"
+                    />
+                    Franciele Venega
+                  </cite>
+                </blockquote>
+              </div>
+
+              <div class="testimonial swiper-slide">
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>
+                    Ótimo atendimento!
+                  </p>
+                  <cite>
+                    <img
+                      src="assets/fotos/26.jpeg"
+                      alt="Fotos de Valeska Fabris"
+                    />
+                    Valeska Fabris
+                  </cite>
+                </blockquote>
+              </div>
+            </div>
+
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-2"></div>
+
+      <!-- CONTACT -->
+      <section class="section" id="contact">
+        <div class="container grid">
+          <div class="text">
+            <h2 class="title">Entre em contato com a gente!</h2>
+            <p>
+              Entre em contato com a Experimento Intercâmbio, queremos tirar suas dúvidas,
+              ouvir suas críticas e sugestões.
+            </p>
+            <a
+              href="https://api.whatsapp.com/send?phone=+5581987989640&text=Oi! Entrar em contato"
+              class="button"
+              target="_blank"
+              ><i class="icon-whatsapp"></i> Entrar em contato</a
+            >
+          </div>
+
+          <div class="links">
+            <ul class="grid">
+              <li><i class="icon-phone"></i> (81) 98873-5824</li>
+              <li><i class="icon-map-pin"></i> R. Ten. João Cícero, 301 - Boa Viagem, Recife - PE, 51020-220</li>
+              <li><i class="icon-mail"></i> contato_boaviagem@experimento.com</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-1"></div>
+    </main>
+
+    <footer class="section">
+      <div class="container grid">
+        <div class="brand">
+          <a class="logo logo-alt" href="#home">experimento<span>boaviagem/pe</span>.</a>
+          <p>©2023 Experimento</p>
+          <p>Todos os direitos reservados. #dev.nil_filho</p>
+        </div>
+
+        <div class="social grid">
+          <a href="https://www.instagram.com/experimentorecife/" target="_blank">
+            <i class="icon-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/ExperimentoIntercambioCultural/?locale=pt_BR" target="_blank">
+            <i class="icon-facebook"></i
+          ></a>
+          <a href="https://www.youtube.com/watch?v=G4CByOit3DM" target="_blank"
+            ><i class="icon-youtube"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#home" class="back-to-top"><i class="icon-arrow-up"></i></a>
+
+    <!-- swiper -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- scrollreveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- main.js -->
+    <script src="main.js"></script>
+  </body>
+</html>
